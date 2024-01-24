@@ -1,0 +1,22 @@
+{
+  "name": "ROS Noetic DevContainer",
+  "dockerFile": "Dockerfile",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+      },
+      "extensions": [
+        "ms-iot.vscode-ros",
+        "ms-azuretools.vscode-docker",
+        "ms-vscode.cmake"
+      ]
+    }
+  },
+  "forwardPorts": [11311],
+  "postCreateCommand": "sudo chown vscode:vscode /workspaces -R",
+  // "runArgs": ["--net=host", "--memory=1g", "--cpus=1"],
+  "runArgs": ["--net=host"],
+  "remoteUser": "vscode"
+}
+  
