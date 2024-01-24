@@ -110,7 +110,7 @@ if __name__ == '__main__':
             pose_target.transform.translation.y = y/1000.0
             pose_target.transform.translation.z = 0.0
 
-            q = tf_conversions.transformations.quaternion_from_euler(0, math.radians(angle), 0)
+            q = tf_conversions.transformations.quaternion_from_euler(0, math.radians(-90), 0)
             pose_target.transform.rotation.x = q[0]
             pose_target.transform.rotation.y = q[1]
             pose_target.transform.rotation.z = q[2]
@@ -119,5 +119,19 @@ if __name__ == '__main__':
             pose_target.header.stamp = rospy.Time.now()
 
             br.sendTransform(pose_target)
-        
+
+            # For debugging
+            transform_available = tfBuffer.can_transform('camera_link', 'box0green', rospy.Time(), timeout=rospy.Duration(1.0))
+            if transform_available:
+                object_frame = tfBuffer.lookup_transform('camera_link', 'box0green', rospy.Time())
+
+                pose_target = geometry_msgs.msg.TransformStamped()
+                pose_target.header.frame_id = "camera_link"
+                pose_target.child_frame_id = "object"
+            
+                pose_target.transform.translation = object_frame.transform.translation
+                pose_target.transform.rotation = object_frame.transform.rotation
+                pose_target.header.stamp = rospy.Time.now()
+
+                br.sendTransform(pose_target)
     
