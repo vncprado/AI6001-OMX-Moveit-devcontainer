@@ -7,10 +7,12 @@ The robot also includes an overhead camera.
 Devcontainer instructions:
 
 Install VSCode, devcontainer extension and Docker.
-To use the devcontainer on Windows you have to open a powershell as administator and clone the repo using following command:
+Clone the repository and open the folder in VSCode:
 
-    $ git clone -c core.symlinks=true git@github.com:vncprado/OMX-Moveit-devcontainer.git
+    $ git clone git@github.com:vncprado/AI6001-OMX-Moveit-devcontainer.git
 
+Select the option "Reopen in container".  
+After the finishing loading the folder in Docker. Open a terminal.  
 To launch the tutorial:
 
     $ catkin_make
