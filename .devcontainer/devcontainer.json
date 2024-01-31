@@ -3,8 +3,8 @@
 {
   "name": "AI6001 ROS Dev container",
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  // "image": "bayesimpact/pandas-base"
-  "dockerFile": "Dockerfile",
+  // "dockerFile": "Dockerfile",
+  "image": "vncprado/ai6001",
 
   // Features to add to the dev container. More info: https://containers.dev/features.
   // "features": {},
