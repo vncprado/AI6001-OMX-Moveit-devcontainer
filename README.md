@@ -19,6 +19,7 @@ To launch the tutorial:
     $ source devel/setup.bash
     $ roslaunch omx_tutorials omx_camera_scene.launch 
 
+Alawys run `source devel/setup.bash` when oppening a new terminal.  
 After this you should be able to open the browser on `localhost:6080` and see the GUI (RViz and Gazebo).  
 The novnc web page requires the password: `vscode`.  
 To run the rest of the tutorial:
